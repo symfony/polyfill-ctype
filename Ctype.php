@@ -23,7 +23,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is either a letter or a digit, FALSE otherwise.
      *
-     * @see http://php.net/manual/en/function.ctype-alnum.php
+     * @see https://php.net/ctype-alnum
      *
      * @param string|int $text
      *
@@ -33,13 +33,13 @@ final class Ctype
     {
         $text = self::convert_int_to_char_for_ctype($text);
 
-        return is_string($text) && '' !== $text && !preg_match('/[^A-Za-z0-9]/', $text);
+        return \is_string($text) && '' !== $text && !preg_match('/[^A-Za-z0-9]/', $text);
     }
 
     /**
      * Returns TRUE if every character in text is a letter, FALSE otherwise.
      *
-     * @see http://php.net/manual/en/function.ctype-alpha.php
+     * @see https://php.net/ctype-alpha
      *
      * @param string|int $text
      *
@@ -55,7 +55,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is a control character from the current locale, FALSE otherwise.
      *
-     * @see http://php.net/manual/en/function.ctype-cntrl.php
+     * @see https://php.net/ctype-cntrl
      *
      * @param string|int $text
      *
@@ -71,7 +71,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in the string text is a decimal digit, FALSE otherwise.
      *
-     * @see http://php.net/manual/en/function.ctype-digit.php
+     * @see https://php.net/ctype-digit
      *
      * @param string|int $text
      *
@@ -87,7 +87,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is printable and actually creates visible output (no white space), FALSE otherwise.
      *
-     * @see http://php.net/manual/en/function.ctype-graph.php
+     * @see https://php.net/ctype-graph
      *
      * @param string|int $text
      *
@@ -103,7 +103,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is a lowercase letter.
      *
-     * @see http://php.net/manual/en/function.ctype-lower.php
+     * @see https://php.net/ctype-lower
      *
      * @param string|int $text
      *
@@ -119,7 +119,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text will actually create output (including blanks). Returns FALSE if text contains control characters or characters that do not have any output or control function at all.
      *
-     * @see http://php.net/manual/en/function.ctype-print.php
+     * @see https://php.net/ctype-print
      *
      * @param string|int $text
      *
@@ -135,7 +135,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is printable, but neither letter, digit or blank, FALSE otherwise.
      *
-     * @see http://php.net/manual/en/function.ctype-punct.php
+     * @see https://php.net/ctype-punct
      *
      * @param string|int $text
      *
@@ -151,7 +151,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text creates some sort of white space, FALSE otherwise. Besides the blank character this also includes tab, vertical tab, line feed, carriage return and form feed characters.
      *
-     * @see http://php.net/manual/en/function.ctype-space.php
+     * @see https://php.net/ctype-space
      *
      * @param string|int $text
      *
@@ -167,12 +167,11 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is an uppercase letter.
      *
-     * @see http://php.net/manual/en/function.ctype-upper.php
+     * @see https://php.net/ctype-upper
      *
      * @param string|int $text
      *
      * @return bool
-     *
      */
     public static function ctype_upper($text)
     {
@@ -184,7 +183,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is a hexadecimal 'digit', that is a decimal digit or a character from [A-Fa-f] , FALSE otherwise.
      *
-     * @see http://php.net/manual/en/function.ctype-xdigit.php
+     * @see https://php.net/ctype-xdigit
      *
      * @param string|int $text
      *
@@ -211,7 +210,7 @@ final class Ctype
      */
     private static function convert_int_to_char_for_ctype($int)
     {
-        if(! \is_int($int)) {
+        if (!\is_int($int)) {
             return $int;
         }
 
