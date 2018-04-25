@@ -31,7 +31,9 @@ final class Ctype
      */
     public static function ctype_alnum($text)
     {
-        return !'' === $text && !preg_match('/[^A-Za-z0-9]/', self::convert_int_to_char_for_ctype($text));
+        $text = self::convert_int_to_char_for_ctype($text);
+
+        return is_string($text) && '' !== $text && !preg_match('/[^A-Za-z0-9]/', $text);
     }
 
     /**
@@ -45,7 +47,9 @@ final class Ctype
      */
     public static function ctype_alpha($text)
     {
-        return !'' === $text && !preg_match('/[^A-Za-z]/', self::convert_int_to_char_for_ctype($text));
+        $text = self::convert_int_to_char_for_ctype($text);
+
+        return \is_string($text) && '' !== $text && !preg_match('/[^A-Za-z]/', $text);
     }
 
     /**
@@ -59,7 +63,9 @@ final class Ctype
      */
     public static function ctype_cntrl($text)
     {
-        return !'' === $text && !preg_match('/[^\x00-\x1f\x7f]/', self::convert_int_to_char_for_ctype($text));
+        $text = self::convert_int_to_char_for_ctype($text);
+
+        return \is_string($text) && '' !== $text && !preg_match('/[^\x00-\x1f\x7f]/', $text);
     }
 
     /**
@@ -73,7 +79,9 @@ final class Ctype
      */
     public static function ctype_digit($text)
     {
-        return !'' === $text && !preg_match('/[^0-9]/', self::convert_int_to_char_for_ctype($text));
+        $text = self::convert_int_to_char_for_ctype($text);
+
+        return \is_string($text) && '' !== $text && !preg_match('/[^0-9]/', $text);
     }
 
     /**
@@ -87,7 +95,9 @@ final class Ctype
      */
     public static function ctype_graph($text)
     {
-        return !'' === $text && !preg_match('/[^!-~]/', self::convert_int_to_char_for_ctype($text));
+        $text = self::convert_int_to_char_for_ctype($text);
+
+        return \is_string($text) && '' !== $text && !preg_match('/[^!-~]/', $text);
     }
 
     /**
@@ -101,7 +111,9 @@ final class Ctype
      */
     public static function ctype_lower($text)
     {
-        return !'' === $text && !preg_match('/[^a-z]/', self::convert_int_to_char_for_ctype($text));
+        $text = self::convert_int_to_char_for_ctype($text);
+
+        return \is_string($text) && '' !== $text && !preg_match('/[^a-z]/', $text);
     }
 
     /**
@@ -115,7 +127,9 @@ final class Ctype
      */
     public static function ctype_print($text)
     {
-        return !'' === $text && !preg_match('/[^ -~]/', self::convert_int_to_char_for_ctype($text));
+        $text = self::convert_int_to_char_for_ctype($text);
+
+        return \is_string($text) && '' !== $text && !preg_match('/[^ -~]/', $text);
     }
 
     /**
@@ -129,7 +143,9 @@ final class Ctype
      */
     public static function ctype_punct($text)
     {
-        return !'' === $text && !preg_match('/[^!-\/\:-@\[-`\{-~]/', self::convert_int_to_char_for_ctype($text));
+        $text = self::convert_int_to_char_for_ctype($text);
+
+        return \is_string($text) && '' !== $text && !preg_match('/[^!-\/\:-@\[-`\{-~]/', $text);
     }
 
     /**
@@ -143,7 +159,9 @@ final class Ctype
      */
     public static function ctype_space($text)
     {
-        return !'' === $text && !preg_match('/[^\s]/', self::convert_int_to_char_for_ctype($text));
+        $text = self::convert_int_to_char_for_ctype($text);
+
+        return \is_string($text) && '' !== $text && !preg_match('/[^\s]/', $text);
     }
 
     /**
@@ -158,7 +176,9 @@ final class Ctype
      */
     public static function ctype_upper($text)
     {
-        return !'' === $text && !preg_match('/[^A-Z]/', self::convert_int_to_char_for_ctype($text));
+        $text = self::convert_int_to_char_for_ctype($text);
+
+        return \is_string($text) && '' !== $text && !preg_match('/[^A-Z]/', $text);
     }
 
     /**
@@ -172,7 +192,9 @@ final class Ctype
      */
     public static function ctype_xdigit($text)
     {
-        return !'' === $text && !preg_match('/[^A-Fa-f0-9]/', self::convert_int_to_char_for_ctype($text));
+        $text = self::convert_int_to_char_for_ctype($text);
+
+        return \is_string($text) && '' !== $text && !preg_match('/[^A-Fa-f0-9]/', $text);
     }
 
     /**
@@ -189,7 +211,7 @@ final class Ctype
      */
     private static function convert_int_to_char_for_ctype($int)
     {
-        if(! \is_integer($int)) {
+        if(! \is_int($int)) {
             return $int;
         }
 
