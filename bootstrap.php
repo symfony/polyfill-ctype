@@ -11,7 +11,7 @@
 
 use Symfony\Polyfill\Ctype as p;
 
-if (!extension_loaded('ctype')) {
+if (!function_exists('ctype_alnum')) {
     function ctype_alnum($text) { return p\Ctype::ctype_alnum($text); }
     function ctype_alpha($text) { return p\Ctype::ctype_alpha($text); }
     function ctype_cntrl($text) { return p\Ctype::ctype_cntrl($text); }
