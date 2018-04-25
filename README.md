@@ -1,4 +1,4 @@
-Symfony Polyfill / APCu
+Symfony Polyfill / Ctype
 ========================
 
 This component provides `ctype_*` to users who run php versions without the ctype extension.
