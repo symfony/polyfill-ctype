@@ -206,7 +206,7 @@ final class Ctype
      *
      * @param string|int $int
      *
-     * @return string
+     * @return mixed
      */
     private static function convert_int_to_char_for_ctype($int)
     {
