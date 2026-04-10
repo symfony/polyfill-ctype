@@ -214,7 +214,7 @@ final class Ctype
         if (\PHP_VERSION_ID >= 80100 && !\is_string($int)) {
             @trigger_error($function.'(): Argument of type '.get_debug_type($int).' will be interpreted as string in the future', \E_USER_DEPRECATED);
         }
-        
+
         if (!\is_int($int)) {
             return $int;
         }
